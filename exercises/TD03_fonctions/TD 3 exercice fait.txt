@@ -1,0 +1,109 @@
+#temps[0] : jours, temps[1]: heures, temps[2]: minutes, temps[3]: secondes
+
+def tempsEnSeconde(temps):
+    """ Renvoie la valeur en seconde de temps donné comme jour, heure, minute, seconde."""
+    return (temps [0]*243600 + temps[1]*3600 + temps[2]*60 + temps[3])
+    pass
+
+
+def secondeEnTemps(seconde):
+    """Renvoie le temps (jour, heure, minute, seconde) qui correspond au nombre de seconde passé en argument"""
+    j = seconde // 86400
+    h = (seconde % 86400)// 3600
+    m = ((seconde % 86400) % 3600) // 60
+    s =  ((seconde % 86400) % 3600) % 60
+    return ((j,h,m,s))
+    pass
+
+
+def afficheTemps(temps):
+    x=temps[0]
+    if x > 1:
+        print(x, "jours")
+    elif x != 0:
+        print(x, "jour")
+    else :
+        pass
+    y=temps[1]
+    if y > 1:
+        print(y, "heures")
+    elif y != 0:
+        print(y, "heure")
+    else :
+        pass
+    z=temps[2]
+    if z > 1:
+        print(z, "minutes")
+    elif z != 0:
+        print(z, "minute")
+    else :
+        pass
+    a=temps[3]
+    if a > 1:
+        print(a, "secondes")
+    elif a != 0:
+        print(a, "seconde")
+    else :
+        pass
+afficheTemps((1,0,14,23))
+
+
+def demandeTemps():
+    x=int(input("Nombre de jours"))
+    if x > 365:
+        return("Error")
+    else:
+        y=int(input("Nombre d'heures"))
+        if y > 60:
+            return("Error")
+        else:
+            z=int(input("Nombre de minutes"))
+            if z > 60:
+                return("Error")
+            else :
+                a=int(input("Nombre de secondes"))
+                if a > 60:
+                    return("Error")
+afficheTemps(demandeTemps())
+
+
+def sommeTemps(temps1,temps2):
+    totsec = tempsEnSeconde(temps1) + tempsEnSeconde(temps2)
+    tot = secondeEnTemps(totsec)
+    print (tot)
+    return(tot)
+    pass
+
+sommeTemps((2,3,4,25),(5,22,57,1))
+
+
+def proportionTemps(temps,proportion):
+    x=temps[0]
+    y=temps[1]
+    z=temps[2]
+    n=temps[3]
+    s=(x)84600+(y)3600+(z)60+(n)
+    s=sproportion
+    a=s//86400
+    b=(s%86400)//3600
+    c=((s%86400)%3600)//60
+    d=((s%86400)%3600)%60
+    return(a, b, c, d)
+
+afficheTemps(proportionTemps((2,0,36,0),0.2))
+
+
+def tempsEnDate(temps):
+    secondeEnTemps(temps)
+    j=secondeEnTemps[0]
+    h=secondeEnTemps[1]
+    m=secondeEnTemps[2]
+    s=secondeEnTemps[3]
+    an=j//(36584600)
+    return(an, j, h, m, s)
+
+def afficheDate(date = -1):
+    année=1970+j//(36584600)
+    return("nous sommes le", j, "eme jour de l'année", année)
+
+
